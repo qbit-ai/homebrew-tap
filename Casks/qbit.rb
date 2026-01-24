@@ -20,6 +20,14 @@ cask "qbit" do
     strategy :github_latest
   end
 
+  # Explicitly remove quarantine attribute to prevent Gatekeeper warnings
+  # (Homebrew does this by default, but being explicit ensures it works)
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/qbit.app"],
+                   sudo: false
+  end
+
   app "qbit.app"
 
   zap trash: [
