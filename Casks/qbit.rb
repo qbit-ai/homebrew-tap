@@ -1,13 +1,13 @@
 cask "qbit" do
-  version "0.2.9"
+  version "0.2.10"
 
   on_arm do
-    sha256 "d863821294f68937c0e38944457fbef6c53220611376854161a42ee79e8c8a46"
+    sha256 "34b822640bd0121afdc3946b9a7febfd02083d8c3e584e3072c669b40e7b8a71"
     url "https://github.com/qbit-ai/qbit/releases/download/v#{version}/qbit_#{version}_aarch64.dmg"
   end
 
   on_intel do
-    sha256 "cf3c99c5f6bbb66d94429cfc71b6add0bbde1cd3ccf38658c49ee655563728f8"
+    sha256 "4441a94eb59216d7c03edd9bb6c3717eabd27ebba610875eeb400bb9635e9677"
     url "https://github.com/qbit-ai/qbit/releases/download/v#{version}/qbit_#{version}_x64.dmg"
   end
 
@@ -20,8 +20,7 @@ cask "qbit" do
     strategy :github_latest
   end
 
-  # Explicitly remove quarantine attribute to prevent Gatekeeper warnings
-  # (Homebrew does this by default, but being explicit ensures it works)
+  # Remove quarantine attribute to prevent Gatekeeper warnings
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "#{appdir}/qbit.app"],
