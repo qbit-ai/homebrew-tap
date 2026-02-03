@@ -1,13 +1,13 @@
 cask "qbit" do
-  version "0.2.19"
+  version "0.2.20"
 
   on_arm do
-    sha256 "1cf8f660939ff0c1be7fea0715dd81d4c8f6e2f8bb55014386113a4c0c4a3d52"
+    sha256 "0a74bf33f7388f2f5c344b4c9a0b140afc63690e2edc8c31cb9bdbb2635fed1f"
     url "https://github.com/qbit-ai/qbit/releases/download/v#{version}/qbit_#{version}_aarch64.dmg"
   end
 
   on_intel do
-    sha256 "6f8d47254ee86f90e136507d0c24a904b5760cd28943e6bf2d99feec4eae7234"
+    sha256 "ae3bea183b8e050203d06fcd63d7b1a035ee4b3934a5d4bad75135ce9fab94d7"
     url "https://github.com/qbit-ai/qbit/releases/download/v#{version}/qbit_#{version}_x64.dmg"
   end
 
